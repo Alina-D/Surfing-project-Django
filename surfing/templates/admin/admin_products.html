@@ -1,0 +1,18 @@
+{% extends "admin/base_admin.html" %}
+{% load static %}
+
+{% block js %}
+    {{ block.super }} 
+{% endblock %}
+
+{% block content %}
+    {% for product in products %}
+    <li>
+        <a href="{% url 'products_detail' product.id %}">{{product.name}}</a>
+        <a href="{% url 'products_delete' product.id %}">Удалить</a>
+        <a href="{% url 'products_update' product.id %}">Редактировать</a>
+    </li>
+    {% endfor %}
+    <a href="{% url 'products_create'%}">Добавить</a>
+{% endblock %}
+

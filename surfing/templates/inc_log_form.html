@@ -1,0 +1,16 @@
+﻿<form class="inc_log_form" method="post" action="/user/login/"> {% csrf_token %}
+{% if not user.is_authenticated %}
+	{% if errors %} 
+		<p class="error"> Сожалеем, вы неправильно ввели логин или пароль</p>
+	{% endif%}
+    <div class= "from-group">
+        <input class='form-control' type="text" name="login" value="{{username}}" placeholder="Логин"><br>
+        <input class='form-control' type="password" name="password" value="" placeholder="Пароль"><br>
+    </div>
+    <button type="submit" class="btn btn-primary">Войти</button>
+    <a href="{% url 'registration' %}">Регистрация</a>
+{% else %}
+	{{user.name}}
+	<a href="{% url 'logout' %}">logout</a>
+{% endif %}
+</form>

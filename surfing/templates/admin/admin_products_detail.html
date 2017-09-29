@@ -1,0 +1,12 @@
+{% extends "admin/base_admin.html" %}
+{% load static %}
+
+{% block content %}
+    <p>Детали продукта</p>
+
+    <p> Название: {{product.name}} </p>
+    <p> Картинка: {{product.image}} </p>
+    <p> Категория: {{product.category.name}}  </p>
+    <p> Рейтинг: {{product.rating}} </p>
+    <p> Описание: {{product.description}} </p>   
+{% endblock %}

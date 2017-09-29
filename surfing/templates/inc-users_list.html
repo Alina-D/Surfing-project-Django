@@ -1,0 +1,12 @@
+{% for user in users %}
+    <li>{{ user }}
+        <button type="button" class="btn btn-default" aria-label="Edit"
+                onclick="fill_form({{ user.id }})">
+            <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="btn btn-default" aria-label="Delete" 
+        		onclick="delete_user({{ user.id }})">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+    </li>
+{% endfor %}

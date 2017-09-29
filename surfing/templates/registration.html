@@ -1,0 +1,9 @@
+﻿{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+	<form method="post" role="form" action="{% url 'registration' %}">
+		{% include 'inc_reg_form_as_table.html' %}
+		<input class="btn btn-primary" type="submit" name="Create the account">
+	</form>
+{% endblock %}

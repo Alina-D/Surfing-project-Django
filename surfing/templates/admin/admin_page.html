@@ -1,0 +1,26 @@
+{% extends "admin/base_admin.html" %}
+{% load static %}
+
+{% block js %}
+    {{ block.super }} 
+    <script type="text/javascript" href="{% static 'js/create_user.js' %}"></script> 
+{% endblock %}
+
+
+{% block content %}
+    <div class="form_admin">
+        <form id="user_form">
+            {% include 'inc-universal_form.html' %}
+        </form>
+        <input class="btn btn-primary" type="submit" value="Редактировать" onclick="send_data()">
+    </div>
+    <div class="info">
+        <p> Пользователи: </p>
+        <ul id="users_list">
+            {% include 'inc-users_list.html' %}
+        </ul>
+    </div>
+{% endblock %}
+
+
+
